@@ -1,0 +1,9 @@
+#include 'protheus.ch'
+
+User Function WCONTRACT()
+   RpcClearenv()
+   RPCSetType(3)
+   RpcSetEnv('02')
+
+      FwCallApp("proof-of-delivery")  
+Return 

@@ -67,7 +67,6 @@ export class AppComponent {
   menus: Array<PoMenuItem> = [
  
     { label: 'Home',  action: this.printMenuAction.bind(this), icon: 'po-icon po-icon-wallet', link: '/home' , shortLabel: 'home'},
-    { label: 'Lista',  action: this.printMenuAction.bind(this), icon: 'po-icon po-icon-chart-columns', link: '/lista' , shortLabel: 'lista'},
    
   ];
   constructor(public SidebarService: SidebarService, private router: Router, private route: ActivatedRoute) {}
