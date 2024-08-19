@@ -1,7 +1,9 @@
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { CommonModule} from '@angular/common';
+import { Component, OnInit ,ChangeDetectionStrategy } from '@angular/core';
+import { RouterOutlet, Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { SidebarService } from './_services/sideBar/sidebar.service';
+import { filter } from 'rxjs/operators';
+import {MatIconModule} from '@angular/material/icon';
 
 import {
   PoMenuItem,
@@ -16,12 +18,12 @@ import {
   selector: 'app-root',
   standalone: true,
   imports: [
-
   CommonModule,
-    RouterOutlet,
-    PoToolbarModule,
-    PoMenuModule,
-    PoPageModule
+  RouterOutlet,
+  PoToolbarModule,
+  PoMenuModule,
+  PoPageModule,
+  MatIconModule
   ],
   providers: [SidebarService],
   templateUrl: './app.component.html',
@@ -31,9 +33,32 @@ export class AppComponent {
 
   menuItemSelected: string = '';
 
-  public readonly breadcrumb: PoBreadcrumb = {
-    items: [{ label: 'Home', link: '/' }, { label: 'Dashboard' }]
-   };
+  public breadcrumb: PoBreadcrumb = {
+    items: [{ label: 'Home', link: '/home' }]
+  };
+
+
+  ngOnInit(): void {
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        this.updateBreadcrumb();
+      });
+  }
+
+  updateBreadcrumb(): void {
+    const currentRoute = this.route.root.firstChild?.snapshot;
+    if (currentRoute) {
+      const breadcrumbLabel = currentRoute.title || 'Home';
+      const breadcrumbLink = this.router.url;
+      console.log()
+
+      this.breadcrumb.items = [
+        { label: 'Contratos', link: '/home' },
+        { label: breadcrumbLabel, link: breadcrumbLink }
+      ];
+    }
+  }
 
    public readonly actions: Array<PoPageAction> = [
     
@@ -41,28 +66,11 @@ export class AppComponent {
 
   menus: Array<PoMenuItem> = [
  
-    { label: 'Dashboard',  action: this.printMenuAction.bind(this), icon: 'po-icon po-icon-chart-columns', link: 'dashboard' , shortLabel: 'dashboard'},
-    {
-      label: 'Cotações',
-      icon: 'po-icon po-icon-handshake',
-      shortLabel: 'Cotações',
-      subItems: [
-        { label: 'Criar', link: 'cotacoes/criar' },
-        { label: 'Listar', link: 'cotacoes/listar' }
-      ]
-    },
-    {
-      label: 'Pedidos',
-      icon: 'po-icon po-icon-finance-secure',
-      shortLabel: 'Pedidos',
-      subItems: [
-        { label: 'Listar', link: 'pedidos/listar' },
-        { label: 'FollowUp', link: 'pedidos/followup' }
-      ]
-    },
+    { label: 'Home',  action: this.printMenuAction.bind(this), icon: 'po-icon po-icon-wallet', link: '/home' , shortLabel: 'home'},
+    { label: 'Lista',  action: this.printMenuAction.bind(this), icon: 'po-icon po-icon-chart-columns', link: '/lista' , shortLabel: 'lista'},
    
   ];
-  constructor(public SidebarService: SidebarService) {}
+  constructor(public SidebarService: SidebarService, private router: Router, private route: ActivatedRoute) {}
   printMenuAction(menu: PoMenuItem) {
     this.menuItemSelected = menu.label;
   }
