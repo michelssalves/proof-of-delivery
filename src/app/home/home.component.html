@@ -1,100 +1,80 @@
 <form #f="ngForm">
-    
-    <div class="po-row">
-        <div class="po-md-8">
-            <po-input class="po-lg-4" name="Title" p-clean p-label="Nº Contrato" p-required [p-maxlength]="30"></po-input>
+    <div class="po-ml-5 po-mr-5">    
+        <div class="po-row">
+            <div class="po-md-8">
+            <po-input class="po-lg-2" name="Title" p-clean p-label="Nº Contrato" p-required [p-maxlength]="30"></po-input>
             <po-input class="po-lg-2" name="Title" p-clean p-label="Valor" p-required [p-maxlength]="30"></po-input>
             <po-input class="po-lg-2" name="Title" p-clean p-label="Moeda" p-required [p-maxlength]="30"></po-input>
+            <po-input class="po-lg-6" name="Title" p-clean p-label="Nome do Contrato" p-required [p-maxlength]="30"></po-input>
+            </div>
         </div>
-    </div>
-    <div class="po-row">
-        <div class="po-md-8">
-            <po-input class="po-lg-12" name="Title" p-clean p-label="Nome do Contrato" p-required [p-maxlength]="30"></po-input>
+        <div class="po-row">
+            <div class="po-md-8">
+                <po-input class="po-lg-6" name="Title" p-clean p-label="Parte Contratada/Fornecedor" p-required [p-maxlength]="30"></po-input>
+                <po-input class="po-lg-6" name="Title" p-clean p-label="CNPJ" p-required [p-maxlength]="30"></po-input>
+            </div>
         </div>
-    </div>
-    <div class="po-row">
-        <div class="po-md-8">
-        <po-input class="po-lg-8" name="Title" p-clean p-label="Parte Contratada/Fornecedor" p-required [p-maxlength]="30"></po-input>
-        <po-input class="po-lg-4" name="Title" p-clean p-label="CNPJ" p-required [p-maxlength]="30"></po-input>
-    </div>
-    </div>
-    <div class="po-row">
-        <div class="po-md-8">
-        <po-textarea
-        class="po-lg-12"
-        name="text"  
-        p-label="Installments defined on Contract"
-        >
-        </po-textarea>
-    </div>
-    </div>
-    <div class="po-row">
-        <div class="po-md-8">
-        <po-input class="po-lg-4" name="Title" p-clean p-label="Saldo Contrato" p-required [p-maxlength]="30"></po-input>
-        <po-input class="po-lg-2" name="Title" p-clean p-label="Moeda" p-required [p-maxlength]="30"></po-input>
-        <po-input class="po-lg-2" name="Title" p-clean p-label="%" p-required [p-maxlength]="30"></po-input>
-    </div>
-    </div>
-    <div class="po-row">
-        <div class="po-md-8">
-        <po-input class="po-lg-4" name="Title" p-clean p-label="Valor Medição" p-required [p-maxlength]="30"></po-input>
-        <po-input class="po-lg-2" name="Title" p-clean p-label="Moeda" p-required [p-maxlength]="30"></po-input>
-        <po-input class="po-lg-2" name="Title" p-clean p-label="%" p-required [p-maxlength]="30"></po-input>
-    </div>
-    </div>
-    <div class="po-row">
-        <div class="po-md-8">
-        <po-input class="po-lg-4" name="Title" p-clean p-label="Saldo Atualizado" p-required [p-maxlength]="30"></po-input>
-        <po-input class="po-lg-2" name="Title" p-clean p-label="Moeda" p-required [p-maxlength]="30"></po-input>
-        <po-input class="po-lg-2" name="Title" p-clean p-label="%" p-required [p-maxlength]="30"></po-input>
-    </div>
-    </div>
-    <div class="po-row">
-        <div class="po-md-8">
-        <po-textarea
-        class="po-lg-12"
-        name="text"  
-        p-label="Details of Acquired Itens"
-        >
-        </po-textarea>
-    </div>
-    </div>
-    <div class="po-row">
-        <div class="po-md-8">
-        <po-select class="po-lg-2" name="icon" p-label="Gerenciadora?" [p-options]="YesOrNot"></po-select>
-        <po-input class="po-lg-10" name="Title" p-clean p-label="Nome da Gerenciadora" p-required [p-maxlength]="30"></po-input>
-    </div>
-    </div>
-    <div class="po-row">
-        <div class="po-md-8">
-        <po-textarea
-        class="po-lg-12"
-        name="text"  
-        p-label="Attach evidence report"
-        >
-        </po-textarea>
-    </div>
-    </div>
-    <div class="po-row">
-        <div class="po-md-8">
-        <po-select class="po-lg-2" name="icon" p-label="NF emitida:?" [p-options]="YesOrNot"></po-select>
-        <po-input class="po-lg-10" name="Title" p-clean p-label="Se Sim, Justifique" p-required [p-maxlength]="30"></po-input>
-    </div>
-    </div>
-    <div class="po-row">
-        <div class="po-md-8">
-        <po-textarea
-        class="po-lg-12"
-        name="text"  
-        p-label="Informações Adicionais e Relevantes"
-        >
-        </po-textarea>
-    </div>
-    </div>
-    <div class="po-row p-2">
-        <div class="po-md-8">
-            <po-input class=" po-lg-8" name="Title" p-clean p-label="Supervisor Responsável" p-required [p-maxlength]="30"></po-input>
-            <po-input class="po-lg-4" name="Title" p-clean p-label="Data limite p/ aprovação" p-required [p-maxlength]="30"></po-input>
+        <div class="po-row">
+            <div class="po-md-8">
+
+            </div>
+        </div>
+        <div class="po-row">
+            <div class="po-md-8">
+                <po-input class="po-lg-2" name="Title" p-clean p-label="Saldo Contrato" p-required [p-maxlength]="30"></po-input>
+                <po-input class="po-lg-1" name="Title" p-clean p-label="Moeda" p-required [p-maxlength]="30"></po-input>
+                <po-input class="po-lg-1" name="Title" p-clean p-label="%" p-required [p-maxlength]="30"></po-input>
+                <po-input class="po-lg-2" name="Title" p-clean p-label="Valor Medição" p-required [p-maxlength]="30"></po-input>
+                <po-input class="po-lg-1" name="Title" p-clean p-label="Moeda" p-required [p-maxlength]="30"></po-input>
+                <po-input class="po-lg-1" name="Title" p-clean p-label="%" p-required [p-maxlength]="30"></po-input>
+                <po-input class="po-lg-2" name="Title" p-clean p-label="Saldo Atualizado" p-required [p-maxlength]="30"></po-input>
+                <po-input class="po-lg-1" name="Title" p-clean p-label="Moeda" p-required [p-maxlength]="30"></po-input>
+                <po-input class="po-lg-1" name="Title" p-clean p-label="%" p-required [p-maxlength]="30"></po-input>
+            </div>
+        </div>
+
+        <div class="po-row">
+            <div class="po-md-8">
+                <po-select class="po-lg-2" name="icon" p-label="Gerenciadora?" [p-options]="YesOrNot"></po-select>
+                <po-input class="po-lg-10" name="Title" p-clean p-label="Nome da Gerenciadora" p-required [p-maxlength]="30"></po-input>
+            </div>
+        </div>
+        <div class="po-row">
+            <div class="po-md-8">
+                <po-select class="po-lg-2" name="icon" p-label="NF emitida:?" [p-options]="YesOrNot"></po-select>
+                <po-input class="po-lg-10" name="Title" p-clean p-label="Se Sim, Justifique" p-required [p-maxlength]="30"></po-input>
+            </div>
+        </div>
+        <div class="po-row">
+            <div class="po-md-8">
+                <po-input class="po-lg-10" name="Title" p-clean p-label="Details of Acquired Itens" p-required [p-maxlength]="30"></po-input>
+                <po-input class="po-lg-10" name="Title" p-clean p-label="Installments defined on Contract" p-required [p-maxlength]="30"></po-input>
+            </div>
+        </div>
+        <div class="po-row">
+            <div class="po-md-8">
+                <po-input class="po-lg-10" name="Title" p-clean p-label="Informações Adicionais e Relevantes" p-required [p-maxlength]="30"></po-input>
+                <po-input class="po-lg-10" name="Title" p-clean p-label="Attach evidence report" p-required [p-maxlength]="30"></po-input>
+            </div>
+        </div>
+        <div class="po-row p-2">
+            <div class="po-md-8">
+                <po-input class=" po-lg-8" name="Title" p-clean p-label="Supervisor Responsável" p-required [p-maxlength]="30"></po-input>
+                <po-input class="po-lg-4" name="Title" p-clean p-label="Data limite p/ aprovação" p-required [p-maxlength]="30"></po-input>
+            </div>
         </div>
     </div>
 </form>
+
+
+
+
+ 
+
+
+
+
+
+
+
+

@@ -1,5 +1,6 @@
-img{
-    width: 20vh;
-    height: 10vh;
+img {
+    width: 100%;
+    height: auto; 
+    max-width: 20vh; 
     border-radius: 10px;
 }
