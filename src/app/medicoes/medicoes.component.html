@@ -1,1 +1,35 @@
-<p>medicoes works!</p>
+<po-container>
+  <div class="po-wrapper">
+    <table>
+      <tr>
+        <td *ngFor="let column of columns">
+          {{ column.property }} <!-- Exiba o conteúdo da coluna aqui -->
+        </td>
+      </tr>
+      <tr (click)="openModal(item)" *ngFor="let item of medicoes">
+        <td *ngFor="let column of columns">
+          {{ item[column.property] }}
+        </td>
+      </tr>
+    </table>
+  </div>
+</po-container> 
+  <po-modal p-title="Aprovação de Medição" [p-primary-action]="confirm" [p-secondary-action]="close">
+    <form #optionsForm="ngForm">
+      <div class="po-row">
+        <label for="contrato">Nº Contrato</label>
+        <input type="text" [(ngModel)]="selectedItem.contrato" name="contrato">
+      </div>
+      <div class="po-row">
+        <input type="text" [(ngModel)]="selectedItem.descricao" name="field2">
+      </div>
+      <div class="po-row">
+        <input type="text" [(ngModel)]="selectedItem.valor" name="field3">
+      </div>
+    </form>
+    <po-modal-footer [p-disabled-align]="false">
+      <po-button p-danger="true" p-label="Close" (click)="closeModal()">Close</po-button>
+      <po-button p-label="Clear" (click)="restore()">Clear</po-button>
+      <po-button p-kind="primary" p-label="Confirm" (click)="processOrder()">Confirm</po-button>
+    </po-modal-footer>
+  </po-modal>

@@ -1,0 +1,9 @@
+tr, td{
+    cursor: pointer;
+    background-color: red;
+}
+
+po-container {
+    cursor: pointer;
+    background-color: red;
+}
