@@ -48,3 +48,9 @@ Colar esse abaixo
         ".APP"
     ]
 }
+
+              // "@angular/material/prebuilt-themes/azure-blue.css",
+              // "./node_modules/@po-ui/style/css/po-theme-default.min.css",
+
+                            "@angular/material/prebuilt-themes/azure-blue.css",
+              "./node_modules/@po-ui/style/css/po-theme-default.min.css",

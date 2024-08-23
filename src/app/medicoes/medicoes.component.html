@@ -1,31 +1,48 @@
 <po-container>
   <div class="po-wrapper">
-    <table>
-      <tr>
-        <td *ngFor="let column of columns">
-          {{ column.property }} <!-- Exiba o conteúdo da coluna aqui -->
-        </td>
-      </tr>
-      <tr (click)="openModal(item)" *ngFor="let item of medicoes">
-        <td *ngFor="let column of columns">
-          {{ item[column.property] }}
-        </td>
-      </tr>
+    <table class="table">
+      <thead class="table-light">
+        <tr>
+          <th *ngFor="let column of columns">
+            {{ column.label }} <!-- Exiba o conteúdo da coluna aqui -->
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr (click)="openModal(item)" *ngFor="let item of medicoes">
+          <td *ngFor="let column of columns">
+            {{ item[column.property] }}
+          </td>
+        </tr>
+      </tbody>
     </table>
   </div>
 </po-container> 
   <po-modal p-title="Aprovação de Medição" [p-primary-action]="confirm" [p-secondary-action]="close">
     <form #optionsForm="ngForm">
-      <div class="po-row">
-        <label for="contrato">Nº Contrato</label>
-        <input type="text" [(ngModel)]="selectedItem.contrato" name="contrato">
+      <div class="input-group input-group-sm  mb-3">
+        <div class="col-4">
+          <po-input  p-label="Contrato" [(ngModel)]="selectedItem.contrato" ></po-input>
+        </div>
+        <div class="col-1"></div>
+        <div class="col-4 ">
+          <po-input  p-label="Valor" [(ngModel)]="selectedItem.valor" ></po-input>
+        </div>
+        <div class="col-1"></div>
+        <div class="col-2">
+          <po-input  p-label="Moeda" [(ngModel)]="selectedItem.valor" ></po-input>
+        </div>
       </div>
-      <div class="po-row">
-        <input type="text" [(ngModel)]="selectedItem.descricao" name="field2">
+      <div class="input-group input-group-sm  mb-3">
+        <div class="col-5">
+          <po-input  p-label="Fornecedor" (ngModel)="selectedItem.fornecedor" ></po-input>
+        </div>
+        <div class="col-1"></div>
+        <div class="col-6">
+          <po-input  p-label="CNPJ" (ngModel)="selectedItem.cnpj" ></po-input>
+        </div>
       </div>
-      <div class="po-row">
-        <input type="text" [(ngModel)]="selectedItem.valor" name="field3">
-      </div>
+
     </form>
     <po-modal-footer [p-disabled-align]="false">
       <po-button p-danger="true" p-label="Close" (click)="closeModal()">Close</po-button>

@@ -15,6 +15,7 @@ import {
   PoButtonModule 
 } from '@po-ui/ng-components';
 
+
 @Component({
   selector: 'app-medicoes',
   standalone: true,
@@ -31,7 +32,7 @@ import {
     FormsModule
   ],
   templateUrl: './medicoes.component.html',
-  styleUrls: ['./medicoes.component.css']
+  styleUrls: ['./medicoes.component.scss']
 })
 export class MedicoesComponent {
   @ViewChild(PoModalComponent, { static: true }) poModal!: PoModalComponent;
