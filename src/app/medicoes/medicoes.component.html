@@ -22,27 +22,17 @@
     <form #optionsForm="ngForm">
       <div class="input-group input-group-sm  mb-3">
         <div class="col-4">
-          <po-input  p-label="Contrato" [(ngModel)]="selectedItem.contrato" ></po-input>
+          <po-input  p-label="Contrato"  ></po-input>
         </div>
         <div class="col-1"></div>
         <div class="col-4 ">
-          <po-input  p-label="Valor" [(ngModel)]="selectedItem.valor" ></po-input>
+          <po-input  p-label="Valor" ></po-input>
         </div>
         <div class="col-1"></div>
         <div class="col-2">
-          <po-input  p-label="Moeda" [(ngModel)]="selectedItem.valor" ></po-input>
+          <po-input  p-label="Moeda"  ></po-input>
         </div>
       </div>
-      <div class="input-group input-group-sm  mb-3">
-        <div class="col-5">
-          <po-input  p-label="Fornecedor" (ngModel)="selectedItem.fornecedor" ></po-input>
-        </div>
-        <div class="col-1"></div>
-        <div class="col-6">
-          <po-input  p-label="CNPJ" (ngModel)="selectedItem.cnpj" ></po-input>
-        </div>
-      </div>
-
     </form>
     <po-modal-footer [p-disabled-align]="false">
       <po-button p-danger="true" p-label="Close" (click)="closeModal()">Close</po-button>
